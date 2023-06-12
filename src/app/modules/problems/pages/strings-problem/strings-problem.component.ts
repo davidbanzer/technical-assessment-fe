@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StringsProblemService } from '../../../../data/services/api/strings-problem.service';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-strings-problem',
@@ -11,12 +12,16 @@ export class StringsProblemComponent implements OnInit {
   textArea1: string = '';
   problemResult: string = '';
 
-  constructor(private stringsProblemService: StringsProblemService) { }
+  constructor(
+    private stringsProblemService: StringsProblemService,
+    private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
   }
 
   calculateMaxValue(){
+    this.spinner.show();
+
     let string = this.textArea1;
 
     if(string.length < 1){
@@ -29,6 +34,7 @@ export class StringsProblemComponent implements OnInit {
     }
 
     this.stringsProblemService.calculateMaxValue(string).subscribe((res: any) => {
+      this.spinner.hide();
       if(res.success){
         this.problemResult = res.data.max_value;
         console.log(res.message);
