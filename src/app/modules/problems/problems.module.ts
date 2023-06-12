@@ -4,6 +4,7 @@ import { ChessProblemComponent } from './pages/chess-problem/chess-problem.compo
 import { StringsProblemComponent } from './pages/strings-problem/strings-problem.component';
 import { ProblemsRoutingModule } from './problems-routing.module';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -15,7 +16,8 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
   ],
   imports: [
     CommonModule,
-    ProblemsRoutingModule
+    ProblemsRoutingModule,
+    SharedModule
   ]
 })
 export class ProblemsModule { }
