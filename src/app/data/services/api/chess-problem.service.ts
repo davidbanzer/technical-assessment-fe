@@ -1,20 +1,24 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { ApiResponse } from '../../interfaces/ApiResponse';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class StringsProblemService {
-  private url = 'http://localhost:8000/api/string-problem/';
+export class ChessProblemService {
+  private url = 'http://localhost:8000/api/chess-problem/';
+
   constructor(private http: HttpClient) { }
 
-  calculateMaxValue(string: string): Observable<ApiResponse>{
+  queensAttack(n: number, k: number, rq: number, cq: number, obstacles: number[][]): Observable<ApiResponse>{
     const body = {
-      string
+      n,
+      k,
+      rq,
+      cq,
+      obstacles
     }
     return this.http.post<ApiResponse>(this.url, body);
   }
-
 }

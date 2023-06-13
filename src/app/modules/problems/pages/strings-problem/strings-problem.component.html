@@ -4,14 +4,14 @@
     <form>
       <div class="mb-3">
         <label class="form-label">Input</label>
-        <textarea type="text" class="form-control" id="input-2" [(ngModel)]="textArea1" name="textArea1"></textarea>
+        <textarea type="text" class="form-control" id="input-2" [(ngModel)]="textArea2" name="textArea2"></textarea>
       </div>
       <div class="mb-3">
         <label class="form-label">Result</label>
         <pre class="form-control" id="output-2">{{problemResult}}</pre>
       </div>
       
-      <button type="submit" class="btn btn-primary" (click)="calculateMaxValue()">Send</button>
+      <button type="submit" class="btn btn-primary" (click)="processInputData()">Send</button>
     </form>
   </div>
 </div>
