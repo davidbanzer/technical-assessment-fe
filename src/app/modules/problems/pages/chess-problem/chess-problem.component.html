@@ -1,0 +1,17 @@
+<div class="card" style="width: 30rem;">
+  <div class="card-body">
+    <h5 class="card-title">Problem 1 (Chess)</h5>
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Input</label>
+        <textarea type="text" class="form-control" id="input-1" [(ngModel)]="textArea1" name="textArea1"></textarea>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Result</label>
+        <pre  class="form-control" id="output-1">{{problemResult}}</pre>
+      </div>
+      
+      <button type="submit" class="btn btn-primary" (click)="processInputData()">Send</button>
+    </form>
+  </div>
+</div>
