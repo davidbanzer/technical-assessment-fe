@@ -7,7 +7,7 @@ import { ApiResponse } from '../../interfaces/ApiResponse';
   providedIn: 'root'
 })
 export class StringsProblemService {
-  private url = 'http://localhost:8000/api/string-problem/';
+  private url = 'http://localhost:8000/api/strings-problem/';
   constructor(private http: HttpClient) { }
 
   calculateMaxValue(string: string): Observable<ApiResponse>{
